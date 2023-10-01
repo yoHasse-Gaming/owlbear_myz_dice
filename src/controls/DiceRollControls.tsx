@@ -15,6 +15,7 @@ import HiddenIcon from "@mui/icons-material/VisibilityOffRounded";
 import RollIcon from "@mui/icons-material/ArrowForwardRounded";
 
 import { RerollDiceIcon } from "../icons/RerollDiceIcon";
+import { PushDiceIcon } from "../icons/PushDiceIcon";
 
 import { GradientOverlay } from "./GradientOverlay";
 import { useDiceRollStore } from "../dice/store";
