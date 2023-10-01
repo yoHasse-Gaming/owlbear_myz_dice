@@ -368,14 +368,17 @@ function FinishedRollControls() {
             </IconButton>
           </Tooltip>
 
+          
+
          <Tooltip title="Push" sx={{ pointerEvents: "all"}}>
                <IconButton
                   onClick={() => pushRoll()}
-                  sx={{ PointerEvents: "all", color: "white"}}
+                  sx={{ PointerEvents: "all", color: "white" }}
            >
               <PushDiceIcon />
             </IconButton>
           </Tooltip>
+          </Stack>
                                                         
 
         
@@ -388,7 +391,7 @@ function FinishedRollControls() {
               <CloseIcon />
             </IconButton>
           </Tooltip>
-        </Stack>
+        
       </Box>
       <Stack
         sx={{
