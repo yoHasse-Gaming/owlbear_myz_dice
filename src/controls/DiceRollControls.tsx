@@ -323,6 +323,25 @@ function FinishedRollControls() {
 
   const [resultsExpanded, setResultsExpanded] = useState(false);
 
+
+          function pushRoll(){
+            let rerollIds: string[] = [];
+            for (const key in finishedRollValues) {
+              var value = finishedRollValues[key];
+              console.log("Key:", key);
+              console.log("Value:", value );
+              if (value < 6) {
+                console.log("under six!");
+                rerollIds.push(key);
+              }
+            }
+            reroll(rerollIds);
+          }
+
+
+
+
+
   return (
     <>
       <GradientOverlay top height={resultsExpanded ? 500 : undefined} />
@@ -351,6 +370,19 @@ function FinishedRollControls() {
               <RerollDiceIcon />
             </IconButton>
           </Tooltip>
+
+                                                          <Tooltip title="Push" sx={{ pointerEvents: "all"}}>
+                                                            <IconButton
+                                                              onClick={() =pushRoll()}
+                                                              sx={{ PointerEvents: "all", color: "white"}}
+                                                            >
+                                                              <PushDiceIcon />
+                                                              </IconButton>
+                                                          </Tooltip>
+                                                        </Stack>
+
+
+
           <Tooltip title="Clear" sx={{ pointerEvents: "all" }}>
             <IconButton
               onClick={() => clearRoll()}
