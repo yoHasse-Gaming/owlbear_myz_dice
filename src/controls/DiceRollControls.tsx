@@ -21,9 +21,12 @@ import { GradientOverlay } from "./GradientOverlay";
 import { useDiceRollStore } from "../dice/store";
 import { DiceResults } from "./DiceResults";
 import { getDiceToRoll, useDiceControlsStore } from "./store";
+import { getDiceToPush } from "../helpers/getDiceToPush";
 import { DiceType } from "../types/DiceType";
 import { useDiceHistoryStore } from "./history";
 import { Die } from "../types/Die";
+import { isDice, Dice } from "../types/Dice";
+
 
 const jiggle = keyframes`
 0% { transform: translate(0, 0) rotate(0deg); }
@@ -324,25 +327,11 @@ function FinishedRollControls() {
 
   const [resultsExpanded, setResultsExpanded] = useState(false);
 
+  function pushRoll(){
 
-          function pushRoll(){
-            let rerollIds: string[] = [];
-            for (const key in finishedRollValues) {
-              var value = finishedRollValues[key];
-              console.log("Key:", key);
-              console.log("Value:", value );
-              if (value < 6) {
-                console.log("under six!");
-                rerollIds.push(key);
-              }
-            }
-            reroll(rerollIds);
-          }
-        
+      reroll(getDiceToPush(roll as Dice, finishedRollValues));
 
-
-
-
+  }
 
   return (
     <>
@@ -358,31 +347,30 @@ function FinishedRollControls() {
         }}
         component="div"
       >
-        <Stack direction="row">
-          <Tooltip title="Reroll" sx={{ pointerEvents: "all" }}>
-            <IconButton
-              onClick={() => reroll()}
-              sx={{ pointerEvents: "all", color: "white" }}
-            >
-              <RerollDiceIcon />
-            </IconButton>
-          </Tooltip>
-
-          
-
-         <Tooltip title="Push" sx={{ pointerEvents: "all"}}>
-               <IconButton
-                  onClick={() => pushRoll()}
-                  sx={{ PointerEvents: "all", color: "white" }}
-           >
-              <PushDiceIcon />
-            </IconButton>
-          </Tooltip>
-          </Stack>
-                                                        
-
-        
-
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          width="100%"
+          alignItems="start"
+        >
+          <Stack direction="row">
+            <Tooltip title="Reroll" sx={{ pointerEvents: "all" }}>
+              <IconButton
+                onClick={() => reroll()}
+                sx={{ pointerEvents: "all", color: "white" }}
+              >
+                <RerollDiceIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Push" sx={{ pointerEvents: "all" }}>
+              <IconButton
+                onClick={() => pushRoll()}
+                sx={{ pointerEvents: "all", color: "white" }}
+              >
+                <PushDiceIcon />
+              </IconButton>
+            </Tooltip>   
+          </Stack>       
           <Tooltip title="Clear" sx={{ pointerEvents: "all" }}>
             <IconButton
               onClick={() => clearRoll()}
@@ -391,7 +379,7 @@ function FinishedRollControls() {
               <CloseIcon />
             </IconButton>
           </Tooltip>
-        
+        </Stack>
       </Box>
       <Stack
         sx={{
