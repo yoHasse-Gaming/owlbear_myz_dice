@@ -356,12 +356,7 @@ function FinishedRollControls() {
         }}
         component="div"
       >
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          width="100%"
-          alignItems="start"
-        >
+        <Stack direction="row">
           <Tooltip title="Reroll" sx={{ pointerEvents: "all" }}>
             <IconButton
               onClick={() => reroll()}
