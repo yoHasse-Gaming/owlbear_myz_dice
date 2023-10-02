@@ -26,8 +26,9 @@ export function Sidebar() {
       <Stack p={1} gap={1} alignItems="center">
          
         <Divider flexItem sx={{ mx: 1 }} />
+         <DicePicker /> 
         <Divider flexItem sx={{ mx: 1 }} />
-        <DiceHidden />
+        <DiceExtras />
         <DiceHistory />
         <PluginGate>
           <Divider flexItem sx={{ mx: 1 }} />
