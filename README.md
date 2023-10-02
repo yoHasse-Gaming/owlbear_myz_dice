@@ -1,75 +1,38 @@
-# Mutant:Year Zero Dice for Owlbear Rodeo
+<h1 align="center">Welcome to Mutant:Year Zero Dice for Owlbear Rodeo 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: GNU GPLv3" src="https://img.shields.io/badge/License-GNU GPLv3-yellow.svg" />
+  </a>
+</p>
 
-3D dice extension for playing Mutant: Year Zero and its' expansions in OwlBear Rodeo!
+> 3D dice extension for playing Mutant: Year Zero and its expansions in Owlbear Rodeo!
 
-Thanks to the OwlBear Rodeo dev team for letting amateurs like me fiddle with their Dice roller
+### 🏠 [Homepage](https://github.com/SnakeOfMidgaard/owlbear_myz_dice/)
 
-MASSIVE thanks to [jjsoini](https://github.com/jjsoini/) for help with the Pushing function. Check him out!
+### ✨ [Demo](https://myz-dice.onrender.com/)
 
-![Example](/docs/header.jpg)
+## Install
 
-## Installing
+```sh
+yarn install
+```
 
-The extension can be installed by copy-pasting [this link](https://myz-dice.onrender.com/) into your extensions in at owlbear.rodeo.
+## Usage
 
-## How it Works
+```sh
+The extension can be installed by copy-pasting this link into your extensions at the bottom of your owlbear.rodeo profile.
+```
 
-This project uses [React](https://reactjs.org/) for UI, [Three.js](https://threejs.org/) for rendering and [Rapier](https://rapier.rs/) for physics.
+## Author
 
-The physics simulation is used to both generate the animation for the roll as well as the final roll values.
+👤 **Zonrötan**
 
-> Wait is it really random if physics is used to determine the result? How do I know the dice rolls are fair?
+* Github: [@SnakeOfMidgaard](https://github.com/SnakeOfMidgaard)
 
-Short answer yes, the dice are fair. Long answer [here's a statistical analysis](https://blog.owlbear.rodeo/are-owlbear-rodeos-dice-fair/) of the rolling methodology.
+## Show your support
 
-In order to sync rolls over the network efficiently we rely on the fact the Rapier is a deterministic physics engine. This means that across two different computers we'll get the same result given the same initial parameters.
+Give a ⭐️ if this project helped you!
 
-So we only need to make sure that all the initial parameters are synced and then each client can run its own simulation and end up with the correct animation.
-
-To try out the dice roller outside of Owlbear Rodeo you can head to <https://dice.owlbear.rodeo/>.
-
-## Building
-
-This project uses [Yarn](https://yarnpkg.com/) as a package manager.
-
-To install all the dependencies run:
-
-`yarn`
-
-To run in a development mode run:
-
-`yarn dev`
-
-To make a production build run:
-
-`yarn build`
-
-## Project Structure
-
-All source files can be found in the `src` folder.
-
-If you'd like to create a new dice set with the existing dice styles edit the `diceSets.ts` file in the `sets` folder.
-
-If you'd like to add a new dice style the 3D models for the dice are split across four folders: `materials`, `meshes`, `colliders` and `previews`.
-
-The `materials` folder contains the PBR materials for each dice style.
-
-The `meshes` folder contains the 3D geometry used for the dice.
-
-The `colliders` folder contains the simplified collider geometry for the dice.
-
-The `previews` folder contains 2D image previews for each dice.
-
-All the code specific for the Owlbear Rodeo extension is in the `plugin` folder.
-
-## License
-
-GNU GPLv3
-
-## Contributing
-
-This project is provided as an example of how to use the Owlbear Rodeo SDK. As such it is unlikely that we will accept pull requests for new features.
-
-Instead we encourage you to fork this repository and build the dice roller of your dreams.
-
-Copyright (C) 2023 Owlbear Rodeo
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
