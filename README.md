@@ -12,7 +12,7 @@ MASSIVE thanks to [jjsoini](https://github.com/jjsoini/) for help with the Pushi
 
 ## Installing
 
-The extension can be installed by copy-pasting [this link](https://myz-dice.onrender.com/) into the "Add extension" window at the bottom of your profile in owlbear.rodeo.
+The extension can be installed by clicking the "ADD EXTENSION" button on your Owlbear Rodeo profile and copy-pasting this link into the URL field.
 
 ```sh
 https://myz-dice.onrender.com/
