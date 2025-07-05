@@ -1,13 +1,13 @@
 {
   "name": "MYZ Dice",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 1,
   "author": "Zonrotan",
-  "homepage_url": "https://github.com/Zonrotan/owlbear_myz_dice/",
+  "homepage_url": "https://github.com/yoHasse/owlbear_myz_dice",
   "icon": "/logo.png",
-  "description": "3D dice extension for Mutant Year Zero",
+  "description": "3D dice extension for Mutant Year Zero, now with 100% more API!",
   "action": {
-    "title": "MYZ Dice",
+    "title": "MYZ Dice Ext",
     "icon": "/icon.svg",
     "popover": "/",
     "height": 700,
