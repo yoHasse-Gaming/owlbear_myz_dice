@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 
 import { InteractiveTray } from "./tray/InteractiveTray";
 import { Sidebar } from "./controls/Sidebar";
-import { ExternalRollHandler, GlobalAPIExporter } from "./plugin/ExternalRollHandler";
+import { ExternalRollHandler } from "./plugin/ExternalRollHandler";
 
 export function App() {
   return (
@@ -14,7 +14,6 @@ export function App() {
       </Stack>
       {/* Add these components to enable external plugin integration */}
       <ExternalRollHandler />
-      <GlobalAPIExporter />
     </Container>
   );
 }
