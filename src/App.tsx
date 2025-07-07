@@ -12,7 +12,6 @@ export function App() {
         <Sidebar />
         <InteractiveTray />
       </Stack>
-      {/* Add these components to enable external plugin integration */}
       <ExternalRollHandler />
     </Container>
   );
