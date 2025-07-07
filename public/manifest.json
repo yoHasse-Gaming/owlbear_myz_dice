@@ -1,6 +1,6 @@
 {
   "name": "MYZ Dice",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "manifest_version": 1,
   "author": "Zonrotan",
   "homepage_url": "https://yohasse-gaming.github.io/owlbear_myz_dice",
@@ -9,7 +9,7 @@
   "action": {
     "title": "MYZ Dice Ext",
     "icon": "https://yohasse-gaming.github.io/owlbear_myz_dice/icon.svg",
-    "popover": "https://yohasse-gaming.github.io/owlbear_myz_dice/popover.html",
+    "popover": "https://yohasse-gaming.github.io/owlbear_myz_dice/",
     "height": 700,
     "width": 375
   },
