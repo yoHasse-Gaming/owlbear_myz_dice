@@ -4,7 +4,7 @@ import { getPluginId } from "./plugin/getPluginId";
 OBR.onReady(() => {
   OBR.popover.open({
     id: getPluginId("popover"),
-    url: "/popover.html",
+    url: "/owlbear_myz_dice/popover.html",
     width: 0,
     height: 0,
     anchorOrigin: { horizontal: "RIGHT", vertical: "BOTTOM" },
