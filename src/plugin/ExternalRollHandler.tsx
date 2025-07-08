@@ -1,10 +1,11 @@
 
-import { useEffect } from "react";
+import { useEffect, version } from "react";
 import { useDiceRollStore } from "../dice/store";
 import { useDiceControlsStore, getDiceToRoll } from "../controls/store";
 import { generateDiceId } from "../helpers/generateDiceId";
 import { DiceRoll } from "../types/DiceRoll";
 import { getPluginId } from "./getPluginId";
+import OBR from "@owlbear-rodeo/sdk";
 
 interface ExternalRollRequest {
   type: "TRIGGER_ROLL";
@@ -120,6 +121,29 @@ export function ExternalRollHandler() {
       channel.close();
     };
   }, [startRoll, diceById]);
+
+  useEffect(() => {
+    const initializeMetadata = async () => {
+      await OBR.room.setMetadata({
+        [getPluginId("diceRollerReady")]: {
+          timestamp: Date.now(),
+          version: "1.0.0", // TODO: make this dynamic if needed
+        },
+      });
+
+      setInterval(async () => {
+        await OBR.room.setMetadata({
+          [getPluginId("diceRollerReady")]: {
+            timestamp: Date.now(),
+            version: "1.0.0", // TODO: make this dynamic if needed
+          },
+        });
+      }, 30000); // Add interval time
+      
+    };
+
+    initializeMetadata();
+  }, []);
 
   return null; // This component doesn't render anything
 }
