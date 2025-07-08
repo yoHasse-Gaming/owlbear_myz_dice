@@ -127,6 +127,7 @@ export function ExternalRollHandler() {
       return;
     }
     OBR.onReady(async () => {
+      console.debug("[ExternalRollHandler] OBR is ready, setting metadata for dice roller plugin...");
       await OBR.room.setMetadata({
         [getPluginId("diceRollerReady")]: {
           timestamp: Date.now(),
@@ -135,6 +136,7 @@ export function ExternalRollHandler() {
       });
 
       setInterval(async () => {
+        console.debug("[ExternalRollHandler] Setting periodic metadata for dice roller plugin...");
         await OBR.room.setMetadata({
           [getPluginId("diceRollerReady")]: {
             timestamp: Date.now(),
