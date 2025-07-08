@@ -123,7 +123,10 @@ export function ExternalRollHandler() {
   }, [startRoll, diceById]);
 
   useEffect(() => {
-    const initializeMetadata = async () => {
+    if(!OBR.isAvailable) {
+      return;
+    }
+    OBR.onReady(async () => {
       await OBR.room.setMetadata({
         [getPluginId("diceRollerReady")]: {
           timestamp: Date.now(),
@@ -140,9 +143,8 @@ export function ExternalRollHandler() {
         });
       }, 30000); // Add interval time
       
-    };
+    });
 
-    initializeMetadata();
   }, []);
 
   return null; // This component doesn't render anything
