@@ -1,17 +1,18 @@
 {
   "name": "MYZ Dice",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "manifest_version": 1,
   "author": "Zonrotan",
   "homepage_url": "https://yohasse-gaming.github.io/owlbear_myz_dice",
-  "icon": "https://yohasse-gaming.github.io/owlbear_myz_dice/logo.png",
+
+  "icon": "/owlbear_myz_dice/logo.png",
   "description": "3D dice extension for Mutant Year Zero, now with 100% more API!",
   "action": {
     "title": "MYZ Dice Ext",
-    "icon": "https://yohasse-gaming.github.io/owlbear_myz_dice/icon.svg",
-    "popover": "https://yohasse-gaming.github.io/owlbear_myz_dice/",
+    "icon": "/owlbear_myz_dice/icon.svg",
+    "popover": "/owlbear_myz_dice/",
     "height": 700,
     "width": 375
   },
-  "background_url": "https://yohasse-gaming.github.io/owlbear_myz_dice/background.html"
+  "background_url": "/owlbear_myz_dice/background.html"
 }

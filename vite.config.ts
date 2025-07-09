@@ -9,7 +9,10 @@ declare var __dirname: string;
 export default defineConfig(({ command }) => ({
   plugins: [react()],
   assetsInclude: ["**/*.glb", "**/*.hdr"],
-  base: command === 'build' ? '/owlbear_myz_dice/' : '/',
+  base: command === 'build' ? '/owlbear_myz_dice/' : '/owlbear_myz_dice/',
+  server: {
+    port: 5174,
+  },
   build: {
     rollupOptions: {
       input: {

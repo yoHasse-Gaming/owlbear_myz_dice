@@ -12,5 +12,5 @@ OBR.onReady(() => {
     disableClickAway: true,
     hidePaper: true,
     marginThreshold: 0,
-  });
+  });    
 });

@@ -45,9 +45,8 @@ export function ExternalRollHandler() {
       console.warn("[ExternalRollHandler] BroadcastChannel not supported in this environment");
       return;
     }
-
     const channel = new BroadcastChannel(getPluginId("myz-dice-integration"));
-    console.debug("[ExternalRollHandler] BroadcastChannel 'myz-dice-integration' created and listening for messages");
+    console.debug(`[ExternalRollHandler] BroadcastChannel ${getPluginId("myz-dice-integration")} created and listening for messages`);
     
     channel.onmessage = (event) => {
       console.debug("[ExternalRollHandler] Broadcast message received:", event.data);
@@ -117,10 +116,24 @@ export function ExternalRollHandler() {
     };
 
     return () => {
-      console.log("[ExternalRollHandler] Cleaning up: closing BroadcastChannel");
+      console.debug("[ExternalRollHandler] Cleaning up: closing BroadcastChannel");
       channel.close();
     };
   }, [startRoll, diceById]);
+
+  useEffect(() => {
+    if (!OBR.isAvailable) {
+      console.warn("[ExternalRollHandler] OBR is not available, skipping metadata setup");
+      return;
+    }
+
+    const focusDiceTrayChannel = new BroadcastChannel(getPluginId("focused-dice-tray"));
+    focusDiceTrayChannel.onmessage = async (event) => {
+      const connectionId = event.data;
+      console.debug("[ExternalRollHandler] Received focus dice tray message for connectionId:", connectionId);
+      await OBR.action.open();
+    };
+  }, []);
 
   useEffect(() => {
     if(!OBR.isAvailable) {
