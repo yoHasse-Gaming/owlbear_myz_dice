@@ -1,3 +1,13 @@
+# API Extension
+* This is a fork which includes an API for the Mutant: Year Zero Dice extension for Owlbear Rodeo.
+* It allows for other extensions to interact with the MYZ Dice extension using BroadcastChannel in the browser.
+
+**!IMPORTANT!**
+* The API will only work if this extension and another extension share the same origin since the BroadcastChannel API is limited to same-origin communication.
+* This means that an extension hosted on https://myz-dice.onrender.com/manifest.json will not work with an extension hosted on https://example-ext.onrender.com/manifest.json.
+* Read more about the [BroadcastChannel API](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) and [The Ultimate Guide to the Broadcast Channel API](https://www.telerik.com/blogs/ultimate-guide-broadcast-channel-api) for more information.
+
+
 # Mutant: Year Zero Dice for Owlbear Rodeo
 
 3D dice extension for playing Mutant: Year Zero and its' expansions in OwlBear Rodeo, based on the [OwlBear Rodeo Dice Extension](https://github.com/owlbear-rodeo/dice).
